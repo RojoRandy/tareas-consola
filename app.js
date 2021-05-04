@@ -27,6 +27,7 @@ const main = async()=>{
                 //crear tarea
                 const desc = await leerInput('Descripción: ');
                 tareas.crear(desc);
+                saveFile(tareas.listadoArr)
                 break;
             case '2':
                 //Muestra listado de tareas
@@ -34,7 +35,6 @@ const main = async()=>{
                 break;
         }
 
-        saveFile(tareas.listadoArr)
 
         if(opt!=='0') await pausa();
     }while(opt!=='0')
